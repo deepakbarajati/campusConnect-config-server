@@ -1,0 +1,15 @@
+spring:
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
+      password: Aa@723201
+
+server:
+  servlet:
+    context-path: /campusConnect/alumni
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
