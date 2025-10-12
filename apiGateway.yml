@@ -2,26 +2,63 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: user-service
-          uri: lb://USER-SERVICE
+        - id: authService
+          uri: lb://AUTHSERVICE
           predicates:
-            - Path=/api/v1/users/**
+            - Path=/api/v1/campusConnect/**
           filters:
             - StripPrefix=2
 
-        - id: post-service
-          uri: lb://POST-SERVICE
+        - id: chatService
+          uri: lb://CHATSERVICE
           predicates:
-            - Path=/api/v1/posts/**
+            - Path=/api/v1/campusConnect/**
           filters:
             - StripPrefix=2
+            - name: AuthenticationFilter
+            
+        - id: aluminiService
+          uri: lb://ALUMINISERVICE
+          predicates:
+            - Path=/api/v1/campusConnect/**
+          filters:
+            - StripPrefix=2
+            - name: AuthenticationFilter
+            
+        - id: classroomService
+          uri: lb://CLASSROOMSERVICE
+          predicates:
+            - Path=/api/v1/campusConnect/**
+          filters:
+            - StripPrefix=2
+            - name: AuthenticationFilter
+            
+        - id: forumService
+          uri: lb://FORUMSERVICE
+          predicates:
+            - Path=/api/v1/campusConnect/**
+          filters:
+            - StripPrefix=2
+            - name: AuthenticationFilter
 
-        - id: connections-service
-          uri: lb://CONNECTIONS-SERVICE
+        - id: gamificationService
+          uri: lb://GAMIFICATIONSERVICE
           predicates:
-            - Path=/api/v1/connections/**
+            - Path=/api/v1/campusConnect/**
           filters:
             - StripPrefix=2
+            - name: AuthenticationFilter
+            
+        - id: opportunityService
+          uri: lb://OPPORTUNITYSERVICE
+          predicates:
+            - Path=/api/v1/campusConnect/**
+          filters:
+            - StripPrefix=2
+            - name: AuthenticationFilter
 
 server:
   port: 8080
+
+jwt:
+  secretKey: jajfkfahancfhaihsdunnfakdjbfdfhjakjj
