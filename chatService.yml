@@ -10,4 +10,4 @@ server:
 
 userService:
   base:
-    url: http://localhost:8081/campusConnect/user/
+    url: http://localhost:8081/campusConnect/user
