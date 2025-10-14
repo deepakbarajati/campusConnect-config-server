@@ -1,8 +1,8 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://deepakbarajati2004_db_user:TQ333PBBaPp2DDjf@cluster0.k8ajxf5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-      database: campusConnect   # ← fixed indentation here
+      uri: mongodb+srv://deepakbarajati2004_db_user:TQ333PBBaPp2DDjf@cluster0.k8ajxf5.mongodb.net/campusConnect?retryWrites=true&w=majority&ssl=true
+      database: campusConnect
 
 server:
   servlet:
