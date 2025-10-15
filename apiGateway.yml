@@ -5,7 +5,7 @@ spring:
         - id: authService
           uri: lb://authService
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/auth/**
           filters:
             - StripPrefix=2
 
