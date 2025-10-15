@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://deepakbarajati2004_db_user:<db_password>@cluster0.k8ajxf5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://deepakbarajati2004_db_user:UbPqTO6wjHYEtznn@cluster0.k8ajxf5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 
 
 server:
