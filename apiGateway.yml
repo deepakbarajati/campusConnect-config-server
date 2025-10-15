@@ -7,14 +7,14 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/auth/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
 
         - id: chatService
           uri: lb://CHATSERVICE
           predicates:
             - Path=/api/v1/campusConnect/chat/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter   # ✅ not AuthenticationFilter
             
         - id: alumniService
@@ -22,7 +22,7 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/alumni/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter
 
         - id: classroomService
@@ -30,7 +30,7 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/classroom/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter
 
         - id: forumService
@@ -38,7 +38,7 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/forum/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter
 
         - id: gamificationService
@@ -46,7 +46,7 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/gamification/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter
 
         - id: opportunityService
@@ -54,7 +54,7 @@ spring:
           predicates:
             - Path=/api/v1/campusConnect/opportunity/**
           filters:
-            - StripPrefix=3
+            - StripPrefix=2
             - name: AuthenticationFilter
 
 server:
