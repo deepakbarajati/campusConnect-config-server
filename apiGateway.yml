@@ -15,7 +15,7 @@ spring:
             - Path=/api/v1/campusConnect/chat/**
           filters:
             - StripPrefix=3
-            - name: Authentication   # ✅ not AuthenticationFilter
+            - name: AuthenticationFilter   # ✅ not AuthenticationFilter
             
         - id: alumniService
           uri: lb://ALUMINISERVICE
@@ -23,7 +23,7 @@ spring:
             - Path=/api/v1/campusConnect/alumni/**
           filters:
             - StripPrefix=3
-            - name: Authentication
+            - name: AuthenticationFilter
 
         - id: classroomService
           uri: lb://CLASSROOMSERVICE
@@ -31,7 +31,7 @@ spring:
             - Path=/api/v1/campusConnect/classroom/**
           filters:
             - StripPrefix=3
-            - name: Authentication
+            - name: AuthenticationFilter
 
         - id: forumService
           uri: lb://FORUMSERVICE
@@ -39,7 +39,7 @@ spring:
             - Path=/api/v1/campusConnect/forum/**
           filters:
             - StripPrefix=3
-            - name: Authentication
+            - name: AuthenticationFilter
 
         - id: gamificationService
           uri: lb://GAMIFICATIONSERVICE
@@ -47,7 +47,7 @@ spring:
             - Path=/api/v1/campusConnect/gamification/**
           filters:
             - StripPrefix=3
-            - name: Authentication
+            - name: AuthenticationFilter
 
         - id: opportunityService
           uri: lb://OPPORTUNITYSERVICE
@@ -55,7 +55,7 @@ spring:
             - Path=/api/v1/campusConnect/opportunity/**
           filters:
             - StripPrefix=3
-            - name: Authentication
+            - name: AuthenticationFilter
 
 server:
   port: 8080
