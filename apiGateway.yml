@@ -3,9 +3,9 @@ spring:
     gateway:
       routes:
         - id: authService
-          uri: lb://AUTHSERVICE
+          uri: lb://authService
           predicates:
-            - Path=/api/v1/campusConnect/auth/**
+            - Path=/api/v1/campusConnect/**
           filters:
             - StripPrefix=2
 
