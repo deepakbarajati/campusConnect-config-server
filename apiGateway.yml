@@ -5,57 +5,57 @@ spring:
         - id: authService
           uri: lb://AUTHSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/auth/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=3
 
         - id: chatService
           uri: lb://CHATSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/chat/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
+            - StripPrefix=3
+            - name: Authentication   # ✅ not AuthenticationFilter
             
-        - id: aluminiService
+        - id: alumniService
           uri: lb://ALUMINISERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/alumni/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
-            
+            - StripPrefix=3
+            - name: Authentication
+
         - id: classroomService
           uri: lb://CLASSROOMSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/classroom/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
-            
+            - StripPrefix=3
+            - name: Authentication
+
         - id: forumService
           uri: lb://FORUMSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/forum/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
+            - StripPrefix=3
+            - name: Authentication
 
         - id: gamificationService
           uri: lb://GAMIFICATIONSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/gamification/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
-            
+            - StripPrefix=3
+            - name: Authentication
+
         - id: opportunityService
           uri: lb://OPPORTUNITYSERVICE
           predicates:
-            - Path=/api/v1/campusConnect/**
+            - Path=/api/v1/campusConnect/opportunity/**
           filters:
-            - StripPrefix=2
-            - name: AuthenticationFilter
+            - StripPrefix=3
+            - name: Authentication
 
 server:
   port: 8080
