@@ -10,7 +10,7 @@ spring:
             - StripPrefix=2
 
         - id: chatService
-          uri: lb://CHATSERVICE
+          uri: lb://chatService
           predicates:
             - Path=/api/v1/campusConnect/chat/**
           filters:
