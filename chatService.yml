@@ -1,7 +1,7 @@
 spring:
   data:
     mongodb:
-      uri:mongodb+srv://Deepakbarjati:a%3FJ%27g%23m3tc-FY%25.@cluster0.k8ajxf5.mongodb.net/campusConnect?retryWrites=true&w=majority&appName=Cluster0
+      uri: mongodb+srv://Deepakbarjati:a%3FJ%27g%23m3tc-FY%25.@cluster0.k8ajxf5.mongodb.net/campusConnect?retryWrites=true&w=majority&appName=Cluster0
 
 
 server:
