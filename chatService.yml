@@ -1,7 +1,8 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://deepakbarajati2004_db_user:4llkudx5s0K8LsN5@campusconnnect.ufyx2h6.mongodb.net/
+      uri: mongodb+srv://deepakbarajati2004_db_user:4llkudx5s0K8LsN5@campusconnnect.ufyx2h6.mongodb.net/campusConnect
+      
 server:
   servlet:
     context-path: /campusConnect/chat
