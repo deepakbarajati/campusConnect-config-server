@@ -15,10 +15,10 @@ spring:
             - Path=/api/v1/campusConnect/chat/**
           filters:
             - StripPrefix=2
-            - name: AuthenticationFilter   # ✅ not AuthenticationFilter
+            - name: AuthenticationFilter
             
         - id: alumniService
-          uri: lb://ALUMINISERVICE
+          uri: lb://aluminiService
           predicates:
             - Path=/api/v1/campusConnect/alumni/**
           filters:
@@ -26,7 +26,7 @@ spring:
             - name: AuthenticationFilter
 
         - id: classroomService
-          uri: lb://CLASSROOMSERVICE
+          uri: lb://classroomService
           predicates:
             - Path=/api/v1/campusConnect/classroom/**
           filters:
@@ -34,7 +34,7 @@ spring:
             - name: AuthenticationFilter
 
         - id: forumService
-          uri: lb://FORUMSERVICE
+          uri: lb://forumService
           predicates:
             - Path=/api/v1/campusConnect/forum/**
           filters:
@@ -42,7 +42,7 @@ spring:
             - name: AuthenticationFilter
 
         - id: gamificationService
-          uri: lb://GAMIFICATIONSERVICE
+          uri: lb://gamificationService
           predicates:
             - Path=/api/v1/campusConnect/gamification/**
           filters:
@@ -50,7 +50,7 @@ spring:
             - name: AuthenticationFilter
 
         - id: opportunityService
-          uri: lb://OPPORTUNITYSERVICE
+          uri: lb://opportunityService
           predicates:
             - Path=/api/v1/campusConnect/opportunity/**
           filters:
@@ -62,3 +62,16 @@ server:
 
 jwt:
   secretKey: jajfkfahancfhaihsdunnfakdjbfdfhjakjj
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.campusConnect.apiGateway: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
