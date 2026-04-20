@@ -2,11 +2,7 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: authService
-
-  config:
-    import: "configserver:http://localhost:8888"
+ 
 
   datasource:
     url: jdbc:postgresql://localhost:5432/campusconnect
@@ -34,7 +30,7 @@ spring:
             enable: true
 
 jwt:
-  secretKey: mySecretKey1234567890123456789012345678901234567890
+  secretKey: jajfkfahancfhaihsdunnfakdjbfdfhjakjj
   expiration: 86400000
 
 eureka:
