@@ -5,7 +5,7 @@ spring:
  
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/campusconnect
+    url: jdbc:postgresql://localhost:5432/campusConnect
     username: postgres
     password: password
 
