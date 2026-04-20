@@ -1,11 +1,19 @@
+server:
+  port: 8081
+
 spring:
+  application:
+    name: authService
+
+  config:
+    import: "configserver:http://localhost:8888"
+
   datasource:
-    url: jdbc:postgresql://localhost:5432/campusConnect
+    url: jdbc:postgresql://localhost:5432/campusconnect
     username: postgres
-    password: 52616a616e69
+    password: password
 
   jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
     show-sql: true
@@ -13,10 +21,31 @@ spring:
       hibernate:
         format_sql: true
 
-server:
-  servlet:
-    context-path: /campusConnect/auth
-  port: 8081
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
 
 jwt:
-  secretKey: jajfkfahancfhaihsdunnfakdjbfdfhjakjj
+  secretKey: mySecretKey1234567890123456789012345678901234567890
+  expiration: 86400000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.campusConnect.authService: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
