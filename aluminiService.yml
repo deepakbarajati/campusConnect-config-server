@@ -1,4 +1,6 @@
+
 spring:
+
   neo4j:
     uri: bolt://localhost:7687
     authentication:
@@ -6,5 +8,19 @@ spring:
       password: Aa@723201
 
 server:
+  port: 8087
   servlet:
     context-path: /campusConnect/alumni
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+logging:
+  level:
+    com.campusConnect.aluminiService: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
