@@ -1,9 +1,4 @@
 spring:
-  application:
-    name: forumService
-
-  config:
-    import: "configserver:http://localhost:8888"
 
   datasource:
     url: jdbc:postgresql://localhost:5432/campusconnect
